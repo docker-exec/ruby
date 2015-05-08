@@ -1,5 +1,6 @@
 FROM        debian:8.0
 MAINTAINER  andystanton
+ENV         LANG C.UTF-8
 RUN         apt-get -qq -y update && \
             apt-get install -y patch curl && \
             command curl -sSL https://rvm.io/mpapis.asc | gpg --import - && \
