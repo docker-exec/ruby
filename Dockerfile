@@ -7,6 +7,5 @@ RUN         apt-get -qq -y update && \
 ADD         image-common /tmp/dexec/image-common
 VOLUME      /tmp/dexec/build
 RUN         apt-get update && apt-get install -y patch
-RUN         cat /root/.profile
 RUN         sed -i '/tty/!s/mesg n/tty -s \&\& mesg n/' /root/.profile
 ENTRYPOINT  ["bash", "-l", "/tmp/dexec/image-common/dexec-script.sh", "ruby"]
